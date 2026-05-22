@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 import Link from "next/link";
 import courseData from "../data/music_courses.json";
 import { BackgroundGradient } from "./ui/backgrounde-gradient";
@@ -10,6 +11,7 @@ interface Course {
     price: number,
     instructor: string,
     isFeatured: boolean,
+    image:string
 }
 function FeaturedCourses() {
     const featuredCourses = courseData.courses.filter((course:Course) => course.isFeatured)
@@ -37,6 +39,13 @@ function FeaturedCourses() {
                         <div
                         className="p-4 sm:p-6 flex flex-col items-center text-center flex-grow"
                         >
+                            <Image
+                              src={course.image}
+                              height={400}
+                              width={400}
+                              className="h-40 w-full object-cover rounded-xl"
+                              alt={course.title}
+                            />
                             <p className="text-lg sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">{course.title}</p>
                             <p
                             >{course.description}</p>
