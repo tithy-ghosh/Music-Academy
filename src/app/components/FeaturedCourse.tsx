@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link";
-import courseData from "../../data/music_courses.json";
-import { BackgroundGradient } from "./backgrounde-gradient";
+import courseData from "../data/music_courses.json";
+import { BackgroundGradient } from "./ui/backgrounde-gradient";
 interface Course {
     id: number,
     title: string,
@@ -39,7 +39,6 @@ function FeaturedCourses() {
                         >
                             <p className="text-lg sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">{course.title}</p>
                             <p
-                            className="text-sm text-neutral-600 dark:text-neutral-400 flex-grow"
                             >{course.description}</p>
                             <Link href={`/courses/${course.slug}`} className="px-4 bg-white text-neutral-600 py-2 my-3 rounded text-md" 
                             style={{fontFamily: '-apple-system'}}
