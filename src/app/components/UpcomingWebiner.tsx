@@ -59,7 +59,7 @@ function UpcomingWebiner() {
                 title: webinar.title,
                 description: webinar.description,
                 link: `/webinars/${webinar.slug}`
-            }))} basePath="/webinars" />
+            }))} />
         </div>
         <div className='mt-10 text-center'>
             <Link href={'/'}
